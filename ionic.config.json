@@ -1,0 +1,7 @@
+{
+  "name": "kybermed-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
