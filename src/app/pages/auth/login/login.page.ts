@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import {
   IonContent,
   IonHeader,
@@ -30,6 +30,11 @@ export class LoginPage implements OnInit {
   };
 
   constructor() {}
+
+  loginForm = new FormGroup({
+    identity: new FormControl(''),
+    email: new FormControl(''),
+  });
 
   ngOnInit() {}
 }
