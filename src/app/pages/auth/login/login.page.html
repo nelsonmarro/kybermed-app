@@ -22,9 +22,7 @@
                 />
               </ion-col>
             </ion-row>
-            <ion-row class="ion-justify-content-center">
-              <ion-card-title> Bienvenido a Kyber Med </ion-card-title>
-            </ion-row>
+            <ion-card-title> Bienvenido a Kyber Med </ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <form [formGroup]="loginForm">
@@ -51,6 +49,7 @@
               </ion-list>
 
               <ion-button
+                class="ion-margin"
                 expand="full"
                 type="submit"
                 [disabled]="!loginForm.valid"
