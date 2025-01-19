@@ -7,6 +7,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
+import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +24,11 @@ import {
   ],
 })
 export class LoginPage implements OnInit {
+  loginReq: LoginRequest = {
+    identity: '',
+    password: '',
+  };
+
   constructor() {}
 
   ngOnInit() {}
