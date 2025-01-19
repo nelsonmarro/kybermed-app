@@ -1,11 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import {
   IonContent,
   IonHeader,
   IonTitle,
   IonToolbar,
+  IonItem,
+  IonInput,
+  IonInputPasswordToggle,
+  IonButton,
 } from '@ionic/angular/standalone';
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 
@@ -21,6 +30,11 @@ import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
     IonToolbar,
     CommonModule,
     FormsModule,
+    IonItem,
+    IonInput,
+    IonInputPasswordToggle,
+    IonButton,
+    ReactiveFormsModule,
   ],
 })
 export class LoginPage implements OnInit {
