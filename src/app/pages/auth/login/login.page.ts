@@ -63,7 +63,7 @@ export class LoginPage implements OnInit {
 
   loginForm = new FormGroup({
     identity: new FormControl(''),
-    email: new FormControl(''),
+    password: new FormControl(''),
   });
 
   ngOnInit() {}
