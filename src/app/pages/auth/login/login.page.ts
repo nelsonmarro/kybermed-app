@@ -15,6 +15,12 @@ import {
   IonInput,
   IonInputPasswordToggle,
   IonButton,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardTitle,
+  IonRow,
+  IonCol,
 } from '@ionic/angular/standalone';
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 
@@ -35,6 +41,12 @@ import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
     IonInputPasswordToggle,
     IonButton,
     ReactiveFormsModule,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardTitle,
+    IonRow,
+    IonCol,
   ],
 })
 export class LoginPage implements OnInit {
