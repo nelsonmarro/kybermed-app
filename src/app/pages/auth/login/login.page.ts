@@ -22,6 +22,7 @@ import {
   IonRow,
   IonCol,
   IonGrid,
+  IonList,
 } from '@ionic/angular/standalone';
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 
@@ -49,6 +50,7 @@ import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
     IonRow,
     IonCol,
     IonGrid,
+    IonList,
   ],
 })
 export class LoginPage implements OnInit {
