@@ -4,22 +4,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" style="height: 100%">
-  <ion-grid style="height: 100%">
+<ion-content [fullscreen]="true">
+  <ion-grid>
     <ion-row
-      class="ion-align-items-center ion-justify-content-center"
+      class="ion-align-items-start ion-justify-content-center"
       style="height: 100%"
     >
       <ion-col size="12" sizeMd="6" sizeLg="4" class="ion-text-center">
         <ion-card>
           <ion-card-header>
-            <img
-              src="https://images.prismic.io/ionicframeworkcom/ac68e1d9-9887-4e5a-9820-9290d06638de_ionic+logo+white+on+blue.png"
-              alt="Ionic logo"
-              loading="lazy"
-            />
-
-            <ion-card-title> Bienvenido a Kyber Med </ion-card-title>
+            <ion-row class="ion-justify-content-center ion-margin-bottom">
+              <ion-col size="3">
+                <img
+                  src="https://images.prismic.io/ionicframeworkcom/ac68e1d9-9887-4e5a-9820-9290d06638de_ionic+logo+white+on+blue.png"
+                  alt="Ionic logo"
+                  loading="lazy"
+                />
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-card-title> Bienvenido a Kyber Med </ion-card-title>
+            </ion-row>
           </ion-card-header>
           <ion-card-content>
             <form [formGroup]="loginForm">
