@@ -21,6 +21,7 @@ import {
   IonCardTitle,
   IonRow,
   IonCol,
+  IonGrid,
 } from '@ionic/angular/standalone';
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 
@@ -47,6 +48,7 @@ import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
     IonCardTitle,
     IonRow,
     IonCol,
+    IonGrid,
   ],
 })
 export class LoginPage implements OnInit {

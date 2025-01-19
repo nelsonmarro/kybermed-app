@@ -7,50 +7,54 @@
 <ion-content [fullscreen]="true">
   <div class="card-container">
     <ion-card>
-      <ion-row>
-        <ion-col size="3" class="ion-padding ion-blue-bkg">
-          <img
-            src="https://images.prismic.io/ionicframeworkcom/ac68e1d9-9887-4e5a-9820-9290d06638de_ionic+logo+white+on+blue.png"
-            alt="Ionic logo"
-            loading="lazy"
-          />
-        </ion-col>
-        <ion-col size-md="9" size="12" class="welcome">
-          <ion-card-header>
-            <ion-card-title> Bienvenido a Kyber Med </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <form [formGroup]="loginForm">
-              <ion-item>
-                <ion-input
-                  type="text"
-                  label="Email"
-                  placeholder="ejemplo@email.com"
-                  formControlName="identity"
-                ></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input
-                  type="password"
-                  label="Password"
-                  formControlName="password"
-                >
-                  <ion-input-password-toggle
-                    slot="end"
-                  ></ion-input-password-toggle>
-                </ion-input>
-              </ion-item>
+      <ion-grid>
+        <ion-row
+          class="ion-align-items-center ion-justify-content-center ion-padding"
+        >
+          <ion-col size="3">
+            <img
+              src="https://images.prismic.io/ionicframeworkcom/ac68e1d9-9887-4e5a-9820-9290d06638de_ionic+logo+white+on+blue.png"
+              alt="Ionic logo"
+              loading="lazy"
+            />
+          </ion-col>
+          <ion-col size="12">
+            <ion-card-header>
+              <ion-card-title> Bienvenido a Kyber Med </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <form [formGroup]="loginForm">
+                <ion-item>
+                  <ion-input
+                    type="text"
+                    label="Email"
+                    placeholder="ejemplo@email.com"
+                    formControlName="identity"
+                  ></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input
+                    type="password"
+                    label="Password"
+                    formControlName="password"
+                  >
+                    <ion-input-password-toggle
+                      slot="end"
+                    ></ion-input-password-toggle>
+                  </ion-input>
+                </ion-item>
 
-              <ion-button
-                expand="full"
-                type="submit"
-                [disabled]="!loginForm.valid"
-                >Iniciar Sesión</ion-button
-              >
-            </form>
-          </ion-card-content>
-        </ion-col>
-      </ion-row>
+                <ion-button
+                  expand="full"
+                  type="submit"
+                  [disabled]="!loginForm.valid"
+                  >Iniciar Sesión</ion-button
+                >
+              </form>
+            </ion-card-content>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card>
   </div>
 </ion-content>
