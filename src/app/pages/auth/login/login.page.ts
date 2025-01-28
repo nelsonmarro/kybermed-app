@@ -28,7 +28,7 @@ import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.page.html',
+  templateUrl: './login-page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
   imports: [
