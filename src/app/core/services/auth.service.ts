@@ -26,7 +26,9 @@ export class AuthService {
   private async init() {
     const token = await this.storage.get(this.tokenKey);
     if (token) {
-      load;
+      this.parseTokenClaims(token);
     }
   }
+
+  parseTokenClaims(token: string) {}
 }
