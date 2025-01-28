@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { computed, Injectable, signal } from '@angular/core';
 import { ApiResponse } from '../models/auth/api-response.model';
 import { LoginResponse } from '../models/auth/login-response.model';
@@ -12,5 +13,5 @@ export class AuthService {
   private _currentUser = signal<ApiResponse<LoginResponse> | null>(null);
   public currentUser = computed(() => this._currentUser());
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 }
