@@ -30,5 +30,8 @@ export class AuthService {
     }
   }
 
-  parseTokenClaims(token: string) {}
+  parseTokenClaims(token: string) {
+    try {
+    } catch (err) {}
+  }
 }
