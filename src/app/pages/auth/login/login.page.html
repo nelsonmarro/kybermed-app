@@ -37,8 +37,8 @@
                 <ion-item>
                   <ion-input
                     type="password"
+                    label="Contraseña"
                     formControlName="password"
-                    placeholder="Contraseña"
                   >
                     <ion-input-password-toggle
                       slot="end"
@@ -47,8 +47,8 @@
                 </ion-item>
               </ion-list>
 
-              class="ion-margin"
               <ion-button
+                class="ion-margin"
                 expand="full"
                 type="submit"
                 [disabled]="!loginForm.valid"
