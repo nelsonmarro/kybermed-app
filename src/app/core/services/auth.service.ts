@@ -7,6 +7,6 @@ export class AuthService {
   private authUrl = 'http://localhost:3000/api/auth';
   private tokenKey = 'ACCESS_TOKEN';
 
-  private currentUser = signal();
+  private currentUser = signal<>({});
   constructor() {}
 }

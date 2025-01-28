@@ -5,7 +5,6 @@ import {
   IonTitle,
   IonContent,
 } from '@ionic/angular/standalone';
-
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
