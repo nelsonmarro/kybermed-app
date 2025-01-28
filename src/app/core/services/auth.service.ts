@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { computed, Injectable, signal } from '@angular/core';
-import { ApiResponse } from '../models/auth/api-response.model';
+import { ApiResponse } from '../models/api-response.model';
 import { LoginResponse } from '../models/auth/login-response.model';
 import { StorageService } from './storage.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -17,5 +18,15 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private storage: StorageService,
-  ) {}
+    private router: Router,
+  ) {
+    this.init();
+  }
+
+  private async init() {
+    const token = await this.storage.get(this.tokenKey);
+    if (token) {
+      load;
+    }
+  }
 }
