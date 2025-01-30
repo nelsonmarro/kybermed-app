@@ -6,6 +6,7 @@ import { StorageService } from './storage.service';
 import { Router } from '@angular/router';
 import { JwtClaims } from '../models/auth/jwt-claims.model';
 import { UserSession } from '../models/user/user-session.model';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
@@ -36,12 +37,11 @@ export class AuthService {
     try {
       const decoded = jwtDecode<JwtClaims>(token);
       const user: UserSession = {
-        id: decoded.sub ?? ''.
-        name: decoded.name ?? ''.
-      }
+        id: decoded.sub ?? '',
+        name: decoded.name ?? '',
+        email: decoded.email ?? '',
+        role: decoded.role ?? '',
+      };
     } catch (err) {}
   }
-}
-function jwtDecode<T>(token: string) {
-  throw new Error('Function not implemented.');
 }
