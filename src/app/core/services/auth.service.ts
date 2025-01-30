@@ -33,7 +33,9 @@ export class AuthService {
     }
   }
 
-  parseTokenClaims(token: string) {
+  async register(name: string, cedula: string, email: string, password: string);
+
+  private parseTokenClaims(token: string) {
     try {
       const decoded = jwtDecode<JwtClaims>(token);
       const user: UserSession = {
@@ -42,7 +44,6 @@ export class AuthService {
         email: decoded.email ?? '',
         role: decoded.role ?? '',
       };
-
       this._currentUser.set(user);
     } catch (err) {
       console.error('Error parsing token', err);
