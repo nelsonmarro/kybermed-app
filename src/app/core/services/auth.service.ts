@@ -5,6 +5,7 @@ import { LoginResponse } from '../models/auth/login-response.model';
 import { StorageService } from './storage.service';
 import { Router } from '@angular/router';
 import { JwtClaims } from '../models/auth/jwt-claims.model';
+import { UserSession } from '../models/user/user-session.model';
 
 @Injectable({
   providedIn: 'root',
@@ -34,6 +35,10 @@ export class AuthService {
   parseTokenClaims(token: string) {
     try {
       const decoded = jwtDecode<JwtClaims>(token);
+      const user: UserSession = {
+        id: decoded.sub ?? ''.
+        name: decoded.name ?? ''.
+      }
     } catch (err) {}
   }
 }
