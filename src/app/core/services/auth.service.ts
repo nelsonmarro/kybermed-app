@@ -4,6 +4,7 @@ import { ApiResponse } from '../models/api-response.model';
 import { LoginResponse } from '../models/auth/login-response.model';
 import { StorageService } from './storage.service';
 import { Router } from '@angular/router';
+import { JwtClaims } from '../models/auth/jwt-claims.model';
 
 @Injectable({
   providedIn: 'root',
@@ -35,4 +36,7 @@ export class AuthService {
       const decoded = jwtDecode<JwtClaims>(token);
     } catch (err) {}
   }
+}
+function jwtDecode<T>(token: string) {
+  throw new Error('Function not implemented.');
 }
