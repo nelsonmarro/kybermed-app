@@ -15,7 +15,7 @@ export class AuthService {
   private authUrl = 'http://localhost:3000/api/auth';
   private tokenKey = 'ACCESS_TOKEN';
 
-  private _currentUser = signal<ApiResponse<LoginResponse> | null>(null);
+  private _currentUser = signal<UserSession | null>(null);
   public currentUser = computed(() => this._currentUser());
 
   constructor(
@@ -42,6 +42,11 @@ export class AuthService {
         email: decoded.email ?? '',
         role: decoded.role ?? '',
       };
-    } catch (err) {}
+
+      this._currentUser.set(user);
+    } catch (err) {
+      console.error('Error parsing token', err);
+      this._currentUser.set(null);
+    }
   }
 }
