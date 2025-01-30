@@ -32,6 +32,7 @@ export class AuthService {
 
   parseTokenClaims(token: string) {
     try {
+      const decoded = jwtDecode<JwtClaims>(token);
     } catch (err) {}
   }
 }
