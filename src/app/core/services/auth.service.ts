@@ -33,7 +33,15 @@ export class AuthService {
     }
   }
 
-  async register(name: string, cedula: string, email: string, password: string);
+  async register(
+    name: string,
+    cedula: string,
+    email: string,
+    password: string,
+  ) {
+    try {
+    } catch (err) {}
+  }
 
   private parseTokenClaims(token: string) {
     try {
