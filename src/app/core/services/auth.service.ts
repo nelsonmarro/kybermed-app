@@ -41,7 +41,9 @@ export class AuthService {
         .subscribe((result) => {
           console.log(result);
         });
-    } catch (err) {}
+    } catch (err) {
+      console.error('Error registering user', err);
+    }
   }
 
   private parseTokenClaims(token: string) {
