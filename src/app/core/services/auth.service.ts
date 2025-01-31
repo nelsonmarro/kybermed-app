@@ -37,12 +37,31 @@ export class AuthService {
   async register(userRegister: UserRegister) {
     try {
       this.http
-        .post('/api/v1/auth/register', userRegister)
+        .post(`${this.authUrl}/register`, userRegister)
         .subscribe((result) => {
           console.log(result);
         });
     } catch (err) {
       console.error('Error registering user', err);
+    }
+  }
+
+  async login(identity: string, password: string) {
+    try {
+      this.http
+        .post<ApiResponse<LoginResponse>>(`${this.authUrl}/login`, {
+          identity,
+          password,
+        })
+        .subscribe((response) => {
+          if (response.status) {
+            this.storage.set(this.tokenKey, response.data.token);
+            this.parseTokenClaims(response.data.token);
+            this.router.navigate(['/home']);
+          }
+        });
+    } catch (err) {
+      console.error('Error logging in', err);
     }
   }
 
