@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { JwtClaims } from '../models/auth/jwt-claims.model';
 import { UserSession } from '../models/user/user-session.model';
 import { jwtDecode } from 'jwt-decode';
+import { UserRegister } from '../models/user/user-register.model';
 
 @Injectable({
   providedIn: 'root',
@@ -33,13 +34,13 @@ export class AuthService {
     }
   }
 
-  async register(
-    name: string,
-    cedula: string,
-    email: string,
-    password: string,
-  ) {
+  async register(userRegister: UserRegister) {
     try {
+      this.http
+        .post('/api/v1/auth/register', userRegister)
+        .subscribe((result) => {
+          console.log(result);
+        });
     } catch (err) {}
   }
 
