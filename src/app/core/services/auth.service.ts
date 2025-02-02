@@ -65,6 +65,10 @@ export class AuthService {
     }
   }
 
+  private async logout(): Promise<void> {
+    await this.storage.remove(this.tokenKey);
+  }
+
   private parseTokenClaims(token: string) {
     try {
       const decoded = jwtDecode<JwtClaims>(token);
