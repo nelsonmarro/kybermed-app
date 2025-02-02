@@ -71,6 +71,14 @@ export class AuthService {
     this.router.navigateByUrl('/login', { replaceUrl: true });
   }
 
+  isAuthenticated() {
+    return this.currentUser() !== null;
+  }
+
+  async getToken() {
+    return await this.storage.get(this.tokenKey);
+  }
+
   private parseTokenClaims(token: string) {
     try {
       const decoded = jwtDecode<JwtClaims>(token);
