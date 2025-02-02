@@ -65,8 +65,10 @@ export class AuthService {
     }
   }
 
-  private async logout(): Promise<void> {
+  private async logout() {
     await this.storage.remove(this.tokenKey);
+    this._currentUser.set(null);
+    this.router.navigateByUrl('/login', { replaceUrl: true });
   }
 
   private parseTokenClaims(token: string) {
