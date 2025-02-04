@@ -70,6 +70,10 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
   onLogin() {
-    console.log(this.loginForm.value);
+    const { identity, password } = this.loginForm.value;
+
+    if (!identity || !password) return;
+
+    this.authService.login(identity, password);
   }
 }
