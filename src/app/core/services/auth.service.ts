@@ -13,7 +13,7 @@ import { UserRegister } from '../models/user/user-register.model';
   providedIn: 'root',
 })
 export class AuthService {
-  private authUrl = 'http://localhost:3000/api/auth';
+  private authUrl = 'http://localhost:3000/api/v1/auth';
   private tokenKey = 'ACCESS_TOKEN';
 
   private _currentUser = signal<UserSession | null>(null);
@@ -54,7 +54,7 @@ export class AuthService {
           password,
         })
         .subscribe((response) => {
-          if (response.status) {
+          if (response.status === 'success') {
             this.storage.set(this.tokenKey, response.data.token);
             this.parseTokenClaims(response.data.token);
             this.router.navigateByUrl('/home');
