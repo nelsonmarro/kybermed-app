@@ -25,7 +25,7 @@
             <ion-card-title> Bienvenido a Kyber Med</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <form [formGroup]="loginForm">
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
               <ion-list>
                 <ion-item>
                   <ion-input

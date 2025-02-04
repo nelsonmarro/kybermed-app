@@ -25,6 +25,7 @@ import {
   IonList,
 } from '@ionic/angular/standalone';
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -59,7 +60,7 @@ export class LoginPage implements OnInit {
     password: '',
   };
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   loginForm = new FormGroup({
     identity: new FormControl(''),
@@ -67,4 +68,8 @@ export class LoginPage implements OnInit {
   });
 
   ngOnInit() {}
+
+  onLogin() {
+    console.log(this.loginForm.value);
+  }
 }
