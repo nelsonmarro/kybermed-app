@@ -57,7 +57,8 @@ export class AuthService {
           if (response.status === 'success') {
             this.storage.set(this.tokenKey, response.data.token);
             this.parseTokenClaims(response.data.token);
-            this.router.navigateByUrl('/home');
+            // this.router.navigateByUrl('/home');
+            console.log(this.currentUser());
           }
         });
     } catch (err) {
