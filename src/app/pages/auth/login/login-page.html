@@ -33,6 +33,13 @@
                     placeholder="Email o Cédula de Identidad"
                     formControlName="identity"
                   ></ion-input>
+
+                  <ion-label
+                    color="danger"
+                    *ngIf="loginForm.get('identity')?.touched && loginForm.get('identity')?.invalid"
+                  >
+                    {{getErrorMessage('identity')}}
+                  </ion-label>
                 </ion-item>
                 <ion-item>
                   <ion-input
