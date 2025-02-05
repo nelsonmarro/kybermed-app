@@ -64,8 +64,14 @@ export class LoginPage implements OnInit {
   constructor(private authService: AuthService) {}
 
   loginForm = new FormGroup({
-    identity: new FormControl('', [Validators.required]),
-    password: new FormControl(''),
+    identity: new FormControl('', [
+      Validators.required,
+      Validators.minLength(15),
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
   });
 
   ngOnInit() {}
