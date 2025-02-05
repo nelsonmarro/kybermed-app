@@ -36,8 +36,9 @@
                 </ion-item>
                 @if(loginForm.get('identity')?.touched &&
                 loginForm.get('identity')?.invalid){
-
-                <ion-item>
+                <ion-item
+                  [ngClass]="{'ion-hide' : loginForm.get('identity')?.valid}"
+                >
                   <ion-label color="danger">
                     {{getErrorMessage('identity')}}
                   </ion-label>
