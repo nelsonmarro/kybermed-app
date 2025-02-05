@@ -24,6 +24,7 @@ import {
   IonCol,
   IonGrid,
   IonList,
+  IonLabel,
 } from '@ionic/angular/standalone';
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -35,6 +36,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
   standalone: true,
   imports: [
     IonContent,
+    IonLabel,
     IonHeader,
     IonTitle,
     IonToolbar,

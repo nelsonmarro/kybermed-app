@@ -9,11 +9,11 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
-.ng-valid {
+.ng-valid:not(form) {
   border-left: 5px solid #42a948; /* green */
 }
 .ng-invalid:not(form) {
-  border-left: 5px solid #a94442; /* red */
+  border-left: 5px solid #f32d39; /* red */
 }
 
 /* Core CSS required for Ionic components to work properly */
