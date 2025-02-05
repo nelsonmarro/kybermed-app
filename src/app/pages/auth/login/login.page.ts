@@ -91,14 +91,14 @@ export class LoginPage implements OnInit {
     if (control?.errors) {
       console.log(control.errors['required']);
     }
-    // if (control?.errors) {
-    //   if (control.errors[0].required) {
-    //     return 'El campo es requerido';
-    //   }
-    //   if (control.errors[0].minlength) {
-    //     return `El campo debe tener al menos caracteres`;
-    //   }
-    // }
+    if (control?.errors) {
+      if (control.errors['required']) {
+        return 'El campo es requerido';
+      }
+      // if (control.errors[0].minlength) {
+      //   return `El campo debe tener al menos caracteres`;
+      // }
+    }
     return '';
   }
 }
