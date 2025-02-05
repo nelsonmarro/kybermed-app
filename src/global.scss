@@ -9,10 +9,10 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
-.ng-touched &.ng-valid:not(form) {
+.ng-touched.ng-valid:not(form) {
   border-bottom: 1px solid #42a948; /* green */
 }
-.ng-invalid:not(form) {
+.ng-touched.ng-invalid:not(form) {
   border-bottom: 1px solid #f32d39; /* red */
 }
 
