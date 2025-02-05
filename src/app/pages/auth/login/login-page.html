@@ -32,15 +32,18 @@
                     type="text"
                     placeholder="Email o Cédula de Identidad"
                     formControlName="identity"
-                    class="ion-float-left"
                   ></ion-input>
-                  @if(loginForm.get('identity')?.touched &&
-                  loginForm.get('identity')?.invalid){
-                  <ion-label color="danger" class="ion-float-left">
+                </ion-item>
+                @if(loginForm.get('identity')?.touched &&
+                loginForm.get('identity')?.invalid){
+
+                <ion-item>
+                  <ion-label color="danger">
                     {{getErrorMessage('identity')}}
                   </ion-label>
-                  }
                 </ion-item>
+                }
+
                 <ion-item>
                   <ion-input
                     type="password"
