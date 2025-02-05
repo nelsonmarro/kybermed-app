@@ -36,8 +36,7 @@
                         formControlName="identity"
                       ></ion-input>
                     </ion-row>
-                    @if(loginForm.get('identity')?.touched &&
-                    loginForm.get('identity')?.invalid){
+                    @if (loginForm.get('identity')?.invalid){
                     <ion-row>
                       <ion-label color="danger" *ngIf="">
                         {{getErrorMessage('identity')}}
