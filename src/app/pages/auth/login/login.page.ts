@@ -5,6 +5,7 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 import {
   IonContent,
@@ -63,7 +64,7 @@ export class LoginPage implements OnInit {
   constructor(private authService: AuthService) {}
 
   loginForm = new FormGroup({
-    identity: new FormControl(''),
+    identity: new FormControl('', [Validators.required]),
     password: new FormControl(''),
   });
 
