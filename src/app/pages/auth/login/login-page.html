@@ -26,44 +26,30 @@
           </ion-card-header>
           <ion-card-content>
             <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-              <ion-list>
-                <ion-item>
-                  <div class="ion-justify-content-between" style="width: 100%">
-                    <ion-input
-                      type="email"
-                      fill="solid"
-                      label="Email"
-                      labelPlacement="floating"
-                      helperText="Enter a valid email"
-                      errorText="Invalid email"
-                      ngModel
-                      email
-                      type="text"
-                      placeholder="Email o Cédula de Identidad"
-                      formControlName="identity"
-                    ></ion-input>
-
-                    @if(loginForm.get('identity')?.touched &&
-                    loginForm.get('identity')?.invalid){
-                    <ion-label color="danger">
-                      {{getErrorMessage('identity')}}
-                    </ion-label>
-                    }
-                  </div>
-                </ion-item>
-
-                <ion-item>
-                  <ion-input
-                    type="password"
-                    placeholder="Contraseñas"
-                    formControlName="password"
-                  >
-                    <ion-input-password-toggle
-                      slot="end"
-                    ></ion-input-password-toggle>
-                  </ion-input>
-                </ion-item>
-              </ion-list>
+              <ion-grid>
+                <ion-input
+                  fill="solid"
+                  labelPlacement="floating"
+                  helperText="Ingresa tu email o cédula de identidad"
+                  errorText="getErrorMessage('identity')"
+                  type="text"
+                  placeholder="Email o Cédula de Identidad"
+                  formControlName="identity"
+                ></ion-input>
+                <ion-input
+                  fill="solid"
+                  labelPlacement="floating"
+                  helperText="Ingresa tu contraseña"
+                  errorText="getErrorMessage('password')"
+                  type="text"
+                  placeholder="Contraseña"
+                  formControlName="password"
+                >
+                  <ion-input-password-toggle
+                    slot="end"
+                  ></ion-input-password-toggle>
+                </ion-input>
+              </ion-grid>
 
               <ion-button
                 class="ion-margin"
