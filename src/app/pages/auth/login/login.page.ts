@@ -85,4 +85,18 @@ export class LoginPage implements OnInit {
 
     this.authService.login(identity, password);
   }
+
+  getErrorMessage(campo: string): string {
+    const control = this.loginForm.get(campo);
+    if (control?.errors) {
+      if (control.errors['required']) {
+        return 'El campo es requerido';
+      }
+      if (control.errors['minlength']) {
+        return `El campo debe tener al menos caracteres`;
+      }
+      // Agrega aquí otros errores según lo necesites.
+    }
+    return '';
+  }
 }
