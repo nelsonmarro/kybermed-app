@@ -28,22 +28,17 @@
             <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
               <ion-list>
                 <ion-item>
-                  <ion-grid>
-                    <ion-row>
-                      <ion-input
-                        type="text"
-                        placeholder="Email o Cédula de Identidad"
-                        formControlName="identity"
-                      ></ion-input>
-                    </ion-row>
-                    @if (loginForm.get('identity')?.invalid){
-                    <ion-row>
-                      <ion-label color="danger" *ngIf="">
-                        {{getErrorMessage('identity')}}
-                      </ion-label>
-                    </ion-row>
-                    }
-                  </ion-grid>
+                  <ion-input
+                    type="text"
+                    placeholder="Email o Cédula de Identidad"
+                    formControlName="identity"
+                  ></ion-input>
+                  @if(loginForm.get('identity')?.touched &&
+                  loginForm.get('identity')?.invalid){
+                  <ion-label color="danger" *ngIf="">
+                    {{getErrorMessage('identity')}}
+                  </ion-label>
+                  }
                 </ion-item>
                 <ion-item>
                   <ion-input
