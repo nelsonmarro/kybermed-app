@@ -30,12 +30,18 @@
                 <ion-input
                   fill="outline"
                   aria-label="Identity"
-                  labelPlacement="floating"
-                  helperText="Ingresa tu email o cédula de identidad"
                   errorText="getErrorMessage('identity')"
                   type="text"
                   formControlName="identity"
-                ></ion-input>
+                  labelPlacement="stacked"
+                  label="Email"
+                >
+                  <ion-icon
+                    slot="start"
+                    name="id-card-outline"
+                    aria-hidden="true"
+                  ></ion-icon>
+                </ion-input>
                 <ion-input
                   fill="outline"
                   aria-label="Contraseña"

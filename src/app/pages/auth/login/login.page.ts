@@ -12,7 +12,6 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
-  IonItem,
   IonInput,
   IonInputPasswordToggle,
   IonButton,
@@ -23,8 +22,7 @@ import {
   IonRow,
   IonCol,
   IonGrid,
-  IonList,
-  IonLabel,
+  IonIcon,
 } from '@ionic/angular/standalone';
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -36,13 +34,12 @@ import { AuthService } from 'src/app/core/services/auth.service';
   standalone: true,
   imports: [
     IonContent,
-    IonLabel,
+    IonIcon,
     IonHeader,
     IonTitle,
     IonToolbar,
     CommonModule,
     FormsModule,
-    IonItem,
     IonInput,
     IonInputPasswordToggle,
     IonButton,
@@ -54,7 +51,6 @@ import { AuthService } from 'src/app/core/services/auth.service';
     IonRow,
     IonCol,
     IonGrid,
-    IonList,
   ],
 })
 export class LoginPage implements OnInit {
