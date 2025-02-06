@@ -24,6 +24,7 @@ import {
   IonGrid,
   IonIcon,
   IonLabel,
+  ToastController,
 } from '@ionic/angular/standalone';
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -63,7 +64,10 @@ export class LoginPage implements OnInit {
     password: '',
   };
 
-  constructor(private authService: AuthService) {
+  constructor(
+    private authService: AuthService,
+    private toastController: ToastController,
+  ) {
     addIcons({ fingerPrintOutline, lockClosed });
   }
 
@@ -99,5 +103,15 @@ export class LoginPage implements OnInit {
       }
     }
     return '';
+  }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom') {
+    const toast = await this.toastController.create({
+      message: 'Hello World!',
+      duration: 1500,
+      position: position,
+    });
+
+    await toast.present();
   }
 }
