@@ -27,7 +27,7 @@ import {
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { addIcons } from 'ionicons';
-import { idCardOutline, fingerPrintOutline } from 'ionicons/icons';
+import { fingerPrintOutline, lockClosed } from 'ionicons/icons';
 
 @Component({
   selector: 'app-login',
@@ -62,7 +62,7 @@ export class LoginPage implements OnInit {
   };
 
   constructor(private authService: AuthService) {
-    addIcons({ fingerPrintOutline });
+    addIcons({ fingerPrintOutline, lockClosed });
   }
 
   loginForm = new FormGroup({

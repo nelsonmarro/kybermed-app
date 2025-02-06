@@ -30,7 +30,7 @@
                 <ion-input
                   fill="outline"
                   aria-label="Identity"
-                  helperText="Ingresa tu email o tu cédula"
+                  placeholder="Ingresa tu email o tu cédula"
                   errorText="getErrorMessage('identity')"
                   type="text"
                   formControlName="identity"
@@ -44,15 +44,24 @@
                     aria-hidden="true"
                   ></ion-icon>
                 </ion-input>
+
                 <ion-input
                   fill="outline"
                   aria-label="Contraseña"
-                  labelPlacement="floating"
-                  helperText="Ingresa tu contraseña"
+                  labelPlacement="stacked"
+                  label="Contraseña"
+                  placeholder="Ingresa tu contraseña"
                   errorText="getErrorMessage('password')"
                   type="text"
                   formControlName="password"
                 >
+                  <ion-icon
+                    slot="start"
+                    name="lock-closed"
+                    size="large"
+                    aria-hidden="true"
+                  ></ion-icon>
+
                   <ion-input-password-toggle
                     slot="end"
                   ></ion-input-password-toggle>
