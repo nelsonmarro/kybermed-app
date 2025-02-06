@@ -55,17 +55,22 @@ export class AuthService {
           identity,
           password,
         })
-        .subscribe(async (response) => {
-          if (response.status === 'success') {
-            this.storage.set(this.tokenKey, response.data.token);
-            this.parseTokenClaims(response.data.token);
-            // this.router.navigateByUrl('/home');
-            await this.toastService.show('top', response.message, 1500);
-            console.log(this.currentUser());
-          } else if (response.status === 'error') {
-            console.log('error');
-            await this.toastService.show('top', response.message, 1500);
-          }
+        .subscribe({
+          next: async (response) => {
+            if (response.status === 'success') {
+              this.storage.set(this.tokenKey, response.data.token);
+              this.parseTokenClaims(response.data.token);
+              await this.toastService.show('top', response.message, 1500);
+              console.log(this.currentUser());
+            }
+          },
+          error: async (err) => {
+            await this.toastService.show(
+              'top',
+              'Ocurrió un error en el servidor',
+              1500,
+            );
+          },
         });
     } catch (err) {
       await this.toastService.show(
