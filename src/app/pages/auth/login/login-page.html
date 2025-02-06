@@ -31,7 +31,7 @@
                 fill="outline"
                 aria-label="Identity"
                 placeholder="Ingresa tu email o tu cédula"
-                errorText="getErrorMessage('identity')"
+                [errorText]="getErrorMessage('identity')"
                 type="text"
                 formControlName="identity"
                 labelPlacement="stacked"
@@ -44,7 +44,6 @@
                   aria-hidden="true"
                 ></ion-icon>
               </ion-input>
-              <ion-label>{{getErrorMessage('identity')}}</ion-label>
 
               <ion-input
                 class="ion-margin-bottom"
@@ -53,7 +52,7 @@
                 labelPlacement="stacked"
                 label="Contraseña"
                 placeholder="Ingresa tu contraseña"
-                errorText="getErrorMessage('password')"
+                [errorText]="getErrorMessage('password')"
                 type="text"
                 formControlName="password"
               >

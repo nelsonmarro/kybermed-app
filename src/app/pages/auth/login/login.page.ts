@@ -91,15 +91,12 @@ export class LoginPage implements OnInit {
   getErrorMessage(campo: string): string {
     const control = this.loginForm.get(campo);
     if (control?.errors) {
-      console.log(control.errors);
-    }
-    if (control?.errors) {
       if (control.errors['required']) {
         return 'El campo es requerido';
       }
-      // if (control.errors[0].minlength) {
-      //   return `El campo debe tener al menos caracteres`;
-      // }
+      if (control.errors['minlength']) {
+        return `El campo debe tener al menos ${control.errors['minlength'].requiredLength} caracteres`;
+      }
     }
     return '';
   }
