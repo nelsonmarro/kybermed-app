@@ -63,6 +63,7 @@ export class AuthService {
             await this.toastService.show('top', response.message, 1500);
             console.log(this.currentUser());
           } else if (response.status === 'error') {
+            console.log('error');
             await this.toastService.show('top', response.message, 1500);
           }
         });
