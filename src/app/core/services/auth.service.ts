@@ -60,17 +60,17 @@ export class AuthService {
             this.storage.set(this.tokenKey, response.data.token);
             this.parseTokenClaims(response.data.token);
             // this.router.navigateByUrl('/home');
-            await this.toastService.show('top', response.message, 1200);
+            await this.toastService.show('top', response.message, 1500);
             console.log(this.currentUser());
-          } else {
-            await this.toastService.show('top', response.message, 1200);
+          } else if (response.status === 'error') {
+            await this.toastService.show('top', response.message, 1500);
           }
         });
     } catch (err) {
       await this.toastService.show(
         'top',
         'Ocurrió un error en el servidor',
-        1200,
+        1500,
       );
     }
   }
