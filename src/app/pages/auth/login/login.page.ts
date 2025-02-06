@@ -84,12 +84,12 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
-  onLogin() {
+  async onLogin() {
     const { identity, password } = this.loginForm.value;
 
     if (!identity || !password) return;
 
-    this.authService.login(identity, password);
+    await this.authService.login(identity, password);
   }
 
   getErrorMessage(campo: string): string {
@@ -103,15 +103,5 @@ export class LoginPage implements OnInit {
       }
     }
     return '';
-  }
-
-  async presentToast(position: 'top' | 'middle' | 'bottom') {
-    const toast = await this.toastController.create({
-      message: 'Hello World!',
-      duration: 1500,
-      position: position,
-    });
-
-    await toast.present();
   }
 }
