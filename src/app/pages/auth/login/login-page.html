@@ -10,7 +10,7 @@
       class="ion-align-items-start ion-justify-content-center"
       style="height: 100%"
     >
-      <ion-col size="12" sizeMd="6" sizeLg="4" class="ion-text-center">
+      <ion-col size="12" sizeMd="6" sizeLg="4">
         <ion-card>
           <ion-card-header>
             <ion-row class="ion-justify-content-center ion-margin-bottom">
@@ -28,21 +28,21 @@
             <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
               <ion-grid>
                 <ion-input
-                  fill="solid"
+                  fill="outline"
+                  aria-label="Identity"
                   labelPlacement="floating"
                   helperText="Ingresa tu email o cédula de identidad"
                   errorText="getErrorMessage('identity')"
                   type="text"
-                  placeholder="Email o Cédula de Identidad"
                   formControlName="identity"
                 ></ion-input>
                 <ion-input
-                  fill="solid"
+                  fill="outline"
+                  aria-label="Contraseña"
                   labelPlacement="floating"
                   helperText="Ingresa tu contraseña"
                   errorText="getErrorMessage('password')"
                   type="text"
-                  placeholder="Contraseña"
                   formControlName="password"
                 >
                   <ion-input-password-toggle
