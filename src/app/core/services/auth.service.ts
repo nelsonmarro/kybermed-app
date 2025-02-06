@@ -8,6 +8,7 @@ import { JwtClaims } from '../models/auth/jwt-claims.model';
 import { UserSession } from '../models/user/user-session.model';
 import { jwtDecode } from 'jwt-decode';
 import { UserRegister } from '../models/user/user-register.model';
+import { ToastService } from './toast.service';
 
 @Injectable({
   providedIn: 'root',
@@ -23,6 +24,7 @@ export class AuthService {
     private http: HttpClient,
     private storage: StorageService,
     private router: Router,
+    private toastService: ToastService,
   ) {
     this.init();
   }
