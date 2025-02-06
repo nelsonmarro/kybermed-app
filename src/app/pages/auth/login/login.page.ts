@@ -26,6 +26,8 @@ import {
 } from '@ionic/angular/standalone';
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { addIcons } from 'ionicons';
+import { idCardOutline, fingerPrintOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-login',
@@ -59,7 +61,9 @@ export class LoginPage implements OnInit {
     password: '',
   };
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) {
+    addIcons({ fingerPrintOutline });
+  }
 
   loginForm = new FormGroup({
     identity: new FormControl('', [
