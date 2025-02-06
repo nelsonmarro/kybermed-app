@@ -26,47 +26,48 @@
           </ion-card-header>
           <ion-card-content>
             <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-              <ion-grid>
-                <ion-input
-                  fill="outline"
-                  aria-label="Identity"
-                  placeholder="Ingresa tu email o tu cédula"
-                  errorText="getErrorMessage('identity')"
-                  type="text"
-                  formControlName="identity"
-                  labelPlacement="stacked"
-                  label="Identidad"
-                >
-                  <ion-icon
-                    slot="start"
-                    name="finger-print-outline"
-                    size="large"
-                    aria-hidden="true"
-                  ></ion-icon>
-                </ion-input>
+              <ion-input
+                class="ion-margin-bottom"
+                fill="outline"
+                aria-label="Identity"
+                placeholder="Ingresa tu email o tu cédula"
+                errorText="getErrorMessage('identity')"
+                type="text"
+                formControlName="identity"
+                labelPlacement="stacked"
+                label="Identidad"
+              >
+                <ion-icon
+                  slot="start"
+                  name="finger-print-outline"
+                  size="large"
+                  aria-hidden="true"
+                ></ion-icon>
+              </ion-input>
+              <ion-label>{{getErrorMessage('identity')}}</ion-label>
 
-                <ion-input
-                  fill="outline"
-                  aria-label="Contraseña"
-                  labelPlacement="stacked"
-                  label="Contraseña"
-                  placeholder="Ingresa tu contraseña"
-                  errorText="getErrorMessage('password')"
-                  type="text"
-                  formControlName="password"
-                >
-                  <ion-icon
-                    slot="start"
-                    name="lock-closed"
-                    size="large"
-                    aria-hidden="true"
-                  ></ion-icon>
+              <ion-input
+                class="ion-margin-bottom"
+                fill="outline"
+                aria-label="Contraseña"
+                labelPlacement="stacked"
+                label="Contraseña"
+                placeholder="Ingresa tu contraseña"
+                errorText="getErrorMessage('password')"
+                type="text"
+                formControlName="password"
+              >
+                <ion-icon
+                  slot="start"
+                  name="lock-closed"
+                  size="large"
+                  aria-hidden="true"
+                ></ion-icon>
 
-                  <ion-input-password-toggle
-                    slot="end"
-                  ></ion-input-password-toggle>
-                </ion-input>
-              </ion-grid>
+                <ion-input-password-toggle
+                  slot="end"
+                ></ion-input-password-toggle>
+              </ion-input>
 
               <ion-button
                 class="ion-margin"

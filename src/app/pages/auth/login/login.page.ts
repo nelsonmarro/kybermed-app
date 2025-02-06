@@ -23,6 +23,7 @@ import {
   IonCol,
   IonGrid,
   IonIcon,
+  IonLabel,
 } from '@ionic/angular/standalone';
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -40,6 +41,7 @@ import { fingerPrintOutline, lockClosed } from 'ionicons/icons';
     IonHeader,
     IonTitle,
     IonToolbar,
+    IonLabel,
     CommonModule,
     FormsModule,
     IonInput,
@@ -89,7 +91,7 @@ export class LoginPage implements OnInit {
   getErrorMessage(campo: string): string {
     const control = this.loginForm.get(campo);
     if (control?.errors) {
-      console.log(control.errors['required']);
+      console.log(control.errors);
     }
     if (control?.errors) {
       if (control.errors['required']) {
