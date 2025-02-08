@@ -65,12 +65,8 @@ export class AuthService {
             }
           },
           error: async (err) => {
-            console.log(err);
-            await this.toastService.show(
-              'top',
-              'Ocurrió un error en el servidor',
-              1500,
-            );
+            const errMsg = err.error.message;
+            await this.toastService.show('top', errMsg, 1500);
           },
         });
     } catch (err) {
