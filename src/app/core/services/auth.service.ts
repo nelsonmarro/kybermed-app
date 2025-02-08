@@ -65,6 +65,7 @@ export class AuthService {
             }
           },
           error: async (err) => {
+            console.log(err);
             await this.toastService.show(
               'top',
               'Ocurrió un error en el servidor',
