@@ -23,7 +23,6 @@ import {
   IonCol,
   IonGrid,
   IonIcon,
-  IonLabel,
   ToastController,
 } from '@ionic/angular/standalone';
 import { LoginRequest } from 'src/app/core/models/auth/login-request.model';
@@ -42,7 +41,7 @@ import { fingerPrintOutline, lockClosed } from 'ionicons/icons';
     IonHeader,
     IonTitle,
     IonToolbar,
-    IonLabel,
+    // IonLabel,
     CommonModule,
     FormsModule,
     IonInput,
